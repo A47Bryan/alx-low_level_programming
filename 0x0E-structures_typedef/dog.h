@@ -14,16 +14,11 @@ typedef struct dog
 	char *name;
 	float *age;
 	char *owner;
-};
-int main(void)
-{
-	struct dog Dog;
-	Dog.name="Poppy";
-	Dog.age=3;
-	Dog.owner="Tim";
-	printf("My name is %s\n", Dog.name);
-	printf("I am %.1f\n", Dog.age);
-	printf("My owner is %s\n", Dog.owner);
-
-	return 0;
-}
+} dog_t;
+/*function prototypes*/
+int _putchar(char c);
+void init_dog(struct dog *d, char *name, float age, char *owner);
+void print_dog(struct dog *d);
+dog_t *new_dog(char *name, float age, char *owner);
+void free_dog(dog_t *d);
+#endif
