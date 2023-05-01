@@ -1,6 +1,9 @@
 #include "lists.h"
 #include <stdlib.h>
 
+/*function to
+ * Add new node
+ * */
 listint_t *add_nodeint(listint_t **head, const int n)
 {
 	listint_t *tp;
