@@ -113,8 +113,8 @@ void print_data(unsigned char *e_ident)
 
 /**
  *  * print_version - Prints the version of an ELF header.
- *   * @e_ident: A pointer to an array containing the ELF version. 
- */
+ *   * @e_ident: A pointer to an array containing the ELF version.
+ *    */
 void print_version(unsigned char *e_ident)
 {
 	 printf(" Version: %d",
@@ -221,7 +221,7 @@ void print_type(unsigned int e_type, unsigned char *e_ident)
 }
 
 /**
- * print_entry - Prints the entry point of an ELF hea//..der.
+ * print_entry - Prints the entry point of an ELF header.
  * @e_entry: The address of the ELF entry point.
  * @e_ident: A pointer to an array containing the ELF class.
  */
@@ -235,8 +235,7 @@ void print_entry(unsigned long int e_entry, unsigned char *e_ident)
 			  ((e_entry >> 8) & 0xFF00FF);
 		e_entry = (e_entry << 16) | (e_entry >> 16);
 	}
-
-	if (e_ident[EI_CLASS] == ELFCLASS32)
+if (e_ident[EI_CLASS] == ELFCLASS32)
 		printf("%#x\n", (unsigned int)e_entry);
 
 	else
@@ -247,7 +246,7 @@ void print_entry(unsigned long int e_entry, unsigned char *e_ident)
  * close_elf - Closes an ELF file.
  * @elf: The file descriptor of the ELF file.
  *
- * Description: If the file cannot be closed - ex///it code 98.
+ * Description: If the file cannot be closed - exit code 98.
  */
 void close_elf(int elf)
 {
@@ -260,14 +259,14 @@ void close_elf(int elf)
 }
 
 /**
- * main - Displays the information contained in //the
- * ELF header at the start of an ELF.... file.
- * @argc: The number of arguments suppli//ed to the program.
- * @argv: An array of pointers to the arguomments.
+ * main - Displays the information contained in the
+ * ELF header at the start of an ELF file.
+ * @argc: The number of arguments supplied to the program.
+ * @argv: An array of pointers to the arguments.
  *
  * Return: 0 on success.
  *
- * Description: If the file is not an ELF Fil///e or
+ * Description: If the file is not an ELF File or
  * the function fails - exit code 98.
  */
 int main(int __attribute__((__unused__)) argc, char *argv[])
@@ -312,3 +311,4 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	close_elf(o);
 	return (0);
 }
+
